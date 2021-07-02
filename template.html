@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Document</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				background: #222;
+			}
+
+			.invoice {
+				background: white url(/images/advertising/paper-edge.svg) top center
+					repeat-x;
+				color: #222;
+				padding: 3rem 2rem 4rem 3rem;
+				width: 600px;
+				margin: 3rem auto;
+				position: relative;
+			}
+			.invoice h1 {
+				font-size: 3rem;
+				text-transform: uppercase;
+				margin: 0;
+			}
+			.invoice h3 {
+				font-weight: 800;
+				text-transform: uppercase;
+				font-size: 0.75rem;
+				margin: 0 0 1rem 0;
+				color: #999;
+			}
+
+			.invoice-id {
+				color: #999;
+				margin: 0 0 2rem 0;
+			}
+
+			.invoice-logo {
+				position: absolute;
+				top: 3.3rem;
+				right: 3rem;
+				width: 120px;
+			}
+
+			.invoice-grid {
+				margin: 0 0 2rem 0;
+			}
+			.invoice-grid > div {
+				padding-right: 1rem;
+			}
+			.invoice-grid pre {
+				margin: 0;
+				font-family: inherit;
+			}
+
+			.invoice-module {
+				border: 1px solid #ccc;
+				padding: 1rem;
+				min-height: 100px;
+			}
+
+			.amount-due-amount,
+			.due-date-date {
+				font-size: 1.5rem;
+				font-weight: 800;
+			}
+
+			.paid-line {
+				padding: 2rem 0 1rem 0;
+				text-align: center;
+			}
+			.paid-line img {
+				display: block;
+				margin: 0 auto 0.5rem;
+			}
+
+			.grid [class^="grid-"] {
+				float: left;
+			}
+			.grid .grid-1-2 {
+				width: 50%;
+			}
+
+			.group:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="invoice">
+			<h1>Invoice</h1>
+
+			<div class="invoice-id"># {{maVe}}</div>
+
+			<img
+				src="https://tuoitre.uit.edu.vn/wp-content/uploads/2015/07/logo-uit-300x248.png"
+				alt="CodePen Logo"
+				class="invoice-logo"
+			/>
+
+			<div class="grid group invoice-parties invoice-grid">
+				<div class="grid-1-2">
+					<div class="invoice-module">
+						<h3>Giờ chiếu</h3>
+						<pre>{{gioChieu}}</pre>
+					</div>
+				</div>
+
+				<div class="grid-1-2">
+					<div class="invoice-module">
+						<h3>Ngày Chiếu</h3>
+						{{ngayChieu}} <br />
+					</div>
+				</div>
+			</div>
+
+			<div class="grid group invoice-parties invoice-grid">
+				<div class="grid-1-2">
+					<div class="invoice-module">
+						<h3>Danh sách ghế</h3>
+						<pre>{{danhSachGhe}}</pre>
+					</div>
+				</div>
+
+				<div class="grid-1-2">
+					<div class="invoice-module">
+						<h3>Phòng chiếu</h3>
+						{{phongChieu}} <br />
+					</div>
+				</div>
+			</div>
+
+
+			<div class="grid group invoice-paid-details invoice-grid">
+				<div class="grid-1-1">
+					<div class="invoice-module">
+						<h3>Tên Phim</h3>
+						<div class="invoice-for">{{tenPhim}}</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="grid group invoice-details invoice-grid">
+				<div class="grid-1-2">
+					<div class="invoice-module">
+						<h3>Paid</h3>
+						<div class="amount-due-amount">{{gia}} VNĐ</div>
+					</div>
+				</div>
+
+				<div class="grid-1-2">
+					<div class="invoice-module">
+						<h3>Date Paid</h3>
+						<div class="due-date-date">{{ngayDat}}</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="paid-line">
+				<img
+					src="https://i.pinimg.com/564x/c4/1a/fd/c41afd715f7489bcb4fbc64d26bdfe96.jpg"
+					witdth="100px"
+					height="100px"
+				/>
+			</div>
+			<h2>Ngày xuất hóa đơn {{ngayXuatHoaDon}}</h2>
+		</div>
+	</body>
+</html>
